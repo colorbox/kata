@@ -25,7 +25,8 @@ class UsersTest < ApplicationSystemTestCase
     visit users_url
     click_on "New User"
 
-    fill_in "Name", with: @user.name
+    input = find('input#user_name')
+    input.set(@user.name)
 
     click_on "Create User"
 
