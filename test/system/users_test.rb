@@ -1,8 +1,19 @@
 require "application_system_test_case"
 
 class UsersTest < ApplicationSystemTestCase
+
+  Capybara.add_selector(:row) do
+    xpath { |num| ".//tbody/tr[#{num}]" }
+  end
+
   setup do
     @user = users(:one)
+  end
+
+  test 'add_selector' do
+    visit users_url
+
+    pp find(:row, 3)
   end
 
   test "visiting the index" do
