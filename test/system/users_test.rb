@@ -21,6 +21,14 @@ class UsersTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Users"
   end
 
+  test "visiting the index2" do
+    visit users_url
+    click_on "New User"
+
+    field = find('input#user_name').ancestor('.field')
+  end
+
+    click_on "New User"
   test "creating a User" do
     visit users_url
     click_on "New User"
