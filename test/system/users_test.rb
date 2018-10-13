@@ -13,7 +13,7 @@ class UsersTest < ApplicationSystemTestCase
   test 'add_selector' do
     visit users_url
 
-    pp find(:row, 3)
+    row = find(:row, 3)
   end
 
   test "visiting the index" do
