@@ -28,7 +28,12 @@ class UsersTest < ApplicationSystemTestCase
     field = find('input#user_name').ancestor('.field')
   end
 
-    click_on "New User"
+  test "sibiling" do
+    visit users_url
+    sib2 = find('.sib1').sibling('.sib2')
+    sib3 = find('.sib1').sibling('.sib3')
+  end
+
   test "creating a User" do
     visit users_url
     click_on "New User"
