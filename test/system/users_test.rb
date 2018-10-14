@@ -85,6 +85,16 @@ class UsersTest < ApplicationSystemTestCase
     find_by_id('id_ans')
   end
 
+  test "find_field" do
+    visit users_url
+    click_on "New User"
+
+    find('.field')
+    find_field()
+    find_field(name: 'user[name]')
+    find_field('Name')
+  end
+
   test "updating a User" do
     visit users_url
     click_on "Edit", match: :first
