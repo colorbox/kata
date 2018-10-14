@@ -61,9 +61,10 @@ class UsersTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "find_button" do
+  test "find_button find_link" do
     visit users_url
-    click_on "New User"
+    new_user_link = find_link(text: 'New User')
+    new_user_link.click
 
     input = find('input#user_name')
     input.set(@user.name)
