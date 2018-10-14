@@ -64,8 +64,6 @@ class UsersTest < ApplicationSystemTestCase
   test "find_button find_link" do
     visit users_url
 
-    pp find_by_id('id_ans')
-
     new_user_link = find_link(text: 'New User')
     new_user_link.click
 
