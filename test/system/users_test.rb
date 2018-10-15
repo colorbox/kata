@@ -112,9 +112,14 @@ class UsersTest < ApplicationSystemTestCase
     assert_text "User was successfully destroyed"
   end
 
-  test "checked?" do
+  test "checked? check" do
     visit users_url
 
-    assert_equal(false, find('.checkbox').checked?)
+    assert_equal(false, find('input#page_freezeflag').checked?)
+
+    cb =  find('input#page_freezeflag')
+    cb.check
+
+    assert_equal(true, find('input#page_freezeflag').checked?)
   end
 end
