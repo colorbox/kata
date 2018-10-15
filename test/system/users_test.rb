@@ -111,4 +111,10 @@ class UsersTest < ApplicationSystemTestCase
 
     assert_text "User was successfully destroyed"
   end
+
+  test "checked?" do
+    visit users_url
+
+    assert_equal(false, find('.checkbox').checked?)
+  end
 end
