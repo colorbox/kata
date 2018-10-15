@@ -122,4 +122,13 @@ class UsersTest < ApplicationSystemTestCase
 
     assert_equal(true, find('input#page_freezeflag').checked?)
   end
+
+  test "choose" do
+    visit users_url
+
+    rb = find('#radio_category_socrates')
+    assert_equal(false, rb.checked?)
+    rb.choose
+    assert_equal(true, rb.checked?)
+  end
 end

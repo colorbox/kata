@@ -38,6 +38,14 @@
   <%= check_box :page, :freezeflag, {}, false, true %>
 </div>
 
-<br>
+<div>
+  <%= radio_button('radio', "category", "socrates") %>
+  <%= radio_button('radio', "category", "platon") %>
+  <%= radio_button('radio', "category", "diogenes") %>
+</div>
 
-<%= link_to 'New User', new_user_path %>
+
+
+<p>
+  <%= link_to 'New User', new_user_path %>
+</p>
