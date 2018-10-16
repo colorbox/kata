@@ -131,4 +131,26 @@ class UsersTest < ApplicationSystemTestCase
     rb.choose
     assert_equal(true, rb.checked?)
   end
+
+  test 'select unselect' do
+    visit users_url
+
+    assert_equal('', find('#single_select').value)
+    find('#single_select').select('select1')
+    assert_equal('select1', find('#single_select').value)
+    find('#single_select').select('select2')
+    assert_equal('select2', find('#single_select').value)
+
+    find('#multiple_select').select('select1')
+    assert_equal(['select1'], find('#multiple_select').value)
+    find('#multiple_select').select('select2')
+    assert_equal(['select1','select2'], find('#multiple_select').value)
+
+    find('#multiple_select').unselect('select1')
+    assert_equal(['select2'], find('#multiple_select').value)
+    find('#multiple_select').unselect('select2')
+    assert_equal([], find('#multiple_select').value)
+
+
+  end
 end

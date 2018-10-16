@@ -44,7 +44,13 @@
   <%= radio_button('radio', "category", "diogenes") %>
 </div>
 
+<p>
+  <%= select_tag(:single_select, options_for_select(['select1', 'select2']), prompt: 'Select something') %>
+</p>
 
+<p>
+  <%= select_tag(:multiple_select, options_for_select(['select1', 'select2']), prompt: 'Select something', multiple: true) %>
+</p>
 
 <p>
   <%= link_to 'New User', new_user_path %>
