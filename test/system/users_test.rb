@@ -154,7 +154,13 @@ class UsersTest < ApplicationSystemTestCase
     assert_equal(['select2'], find('#multiple_select').value)
     find('#multiple_select').unselect('select2')
     assert_equal([], find('#multiple_select').value)
+  end
 
+  test 'attach_file' do
+    visit users_url
 
+    assert_equal('', find('#attachment').value)
+    attach_file(:attachment, "#{Rails.root}/test/fixtures/files/attach.png")
+    assert_equal(true, find('#attachment').value.include?('attach.png'))
   end
 end

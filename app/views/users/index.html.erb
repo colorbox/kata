@@ -53,5 +53,16 @@
 </p>
 
 <p>
+  <%= form_tag '/upload', multipart: true do %>
+    <%= label_tag :attachment %>
+    <%= file_field_tag(:attachment) %>
+    <%= submit_tag %>
+  <% end %>
+</p>
+
+
+<p>
   <%= link_to 'New User', new_user_path %>
 </p>
+
+
