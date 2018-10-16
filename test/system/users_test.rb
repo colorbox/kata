@@ -121,6 +121,10 @@ class UsersTest < ApplicationSystemTestCase
     cb.check
 
     assert_equal(true, find('input#page_freezeflag').checked?)
+
+    cb.uncheck
+
+    assert_equal(false, find('input#page_freezeflag').checked?)
   end
 
   test "choose" do
