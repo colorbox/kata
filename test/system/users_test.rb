@@ -167,9 +167,22 @@ class UsersTest < ApplicationSystemTestCase
   test 'fill_in' do
     visit users_url
 
-    text_area =  find('textarea#text_area')
+    text_area =  find('textarea#textarea_id')
     assert_equal('', text_area.value)
+
     text_area.fill_in(with:'hogehogehugahuga')
     assert_equal('hogehogehugahuga', text_area.value)
+
+    page.fill_in('text_area_name', with:'hoge')
+    assert_equal('hoge', text_area.value)
+
+    page.fill_in('textarea_label_name', with:'huga')
+    assert_equal('huga', text_area.value)
+
+    page.fill_in(:text_area_name, with:'hoge')
+    assert_equal('hoge', text_area.value)
+
+    page.fill_in(:textarea_label_name, with:'huga')
+    assert_equal('huga', text_area.value)
   end
 end
