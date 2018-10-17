@@ -163,4 +163,13 @@ class UsersTest < ApplicationSystemTestCase
     attach_file(:attachment, "#{Rails.root}/test/fixtures/files/attach.png")
     assert_equal(true, find('#attachment').value.include?('attach.png'))
   end
+
+  test 'fill_in' do
+    visit users_url
+
+    text_area =  find('textarea#text_area')
+    assert_equal('', text_area.value)
+    text_area.fill_in(with:'hogehogehugahuga')
+    assert_equal('hogehogehugahuga', text_area.value)
+  end
 end
