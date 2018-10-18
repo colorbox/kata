@@ -184,5 +184,8 @@ class UsersTest < ApplicationSystemTestCase
 
     page.fill_in(:textarea_label_name, with:'huga')
     assert_equal('huga', text_area.value)
+
+    text_area.set('select')
+    assert_equal('select', text_area.value)
   end
 end
