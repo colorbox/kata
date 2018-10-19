@@ -188,4 +188,10 @@ class UsersTest < ApplicationSystemTestCase
     text_area.set('select')
     assert_equal('select', text_area.value)
   end
+
+  test 'multiple?' do
+    visit users_url
+
+    assert_equal(true, find('#multiple_select').multiple?)
+  end
 end
