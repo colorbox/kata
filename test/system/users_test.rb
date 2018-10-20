@@ -194,4 +194,10 @@ class UsersTest < ApplicationSystemTestCase
 
     assert_equal(true, find('#multiple_select').multiple?)
   end
+
+  test 'tag_name' do
+    visit users_url
+
+    assert_equal('select', find('#multiple_select').tag_name)
+  end
 end
