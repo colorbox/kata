@@ -200,4 +200,22 @@ class UsersTest < ApplicationSystemTestCase
 
     assert_equal('select', find('#multiple_select').tag_name)
   end
+
+  test 'Document page current_path' do
+    visit users_url
+
+    assert_equal('CapybaraKata', page.title)
+    assert_equal(true, page == Capybara.current_session)
+
+    assert_equal('/users', current_path)
+
+    visit new_user_path
+
+    assert_equal('/users/new', current_path)
+
+    go_back
+
+    assert_equal('/users', current_path)
+
+  end
 end
