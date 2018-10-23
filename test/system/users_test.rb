@@ -217,5 +217,16 @@ class UsersTest < ApplicationSystemTestCase
 
     assert_equal('/users', current_path)
 
+    go_forward
+
+    assert_equal('/users/new', current_path)
+  end
+
+  test '' do
+    visit users_url
+
+    within_table('table_test') do
+      find('td#table_cell1')
+    end
   end
 end
