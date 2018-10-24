@@ -229,4 +229,11 @@ class UsersTest < ApplicationSystemTestCase
       find('td#table_cell1')
     end
   end
+
+  test 'save_(screenshot|page)' do
+    visit users_url
+
+    page.save_screenshot
+    page.save_page
+  end
 end

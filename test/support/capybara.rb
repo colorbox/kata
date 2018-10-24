@@ -5,4 +5,9 @@ Capybara.register_driver :headless_chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 end
 
-Capybara.javascript_driver = :chrome
+
+Capybara.configure do |config|
+  config.javascript_driver = :chrome
+
+  config.save_path = "#{Rails.root}/tmp/capybara"
+end
