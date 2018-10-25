@@ -238,4 +238,31 @@ class UsersTest < ApplicationSystemTestCase
     page.save_screenshot('hoge')
     page.save_page('huga')
   end
+
+  test 'edit selector' do
+    assert_equal(true, Capybara::Selector.all.include?(:row))
+
+    Capybara::Selector.update(:row) do
+      css{'.hoge'}
+    end
+
+    visit users_url
+
+    find =  find('div.hoge')
+    updated_selector =  find(:row)
+
+    assert_equal(find, updated_selector)
+
+    Capybara::Selector.remove('row')
+    assert_equal(false, Capybara::Selector.all.include?(:row))
+  end
+
+  test 'windows' do
+    assert_equal(1, page.windows.count)
+    page.open_new_window
+    assert_equal(2, page.windows.count)
+    assert_equal(current_window, page.windows[0])
+    switch_to_window(page.windows[1])
+    assert_equal(current_window, page.windows[1])
+  end
 end
