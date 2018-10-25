@@ -222,7 +222,7 @@ class UsersTest < ApplicationSystemTestCase
     assert_equal('/users/new', current_path)
   end
 
-  test '' do
+  test 'within_table' do
     visit users_url
 
     within_table('table_test') do
