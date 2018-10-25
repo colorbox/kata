@@ -2,11 +2,11 @@ require "application_system_test_case"
 
 class UsersTest < ApplicationSystemTestCase
 
-  Capybara.add_selector(:row) do
-    xpath { |num| ".//tbody/tr[#{num}]" }
-  end
-
   setup do
+    Capybara.add_selector(:row) do
+      xpath { |num| ".//tbody/tr[#{num}]" }
+    end
+
     @user = users(:one)
   end
 
@@ -235,5 +235,7 @@ class UsersTest < ApplicationSystemTestCase
 
     page.save_screenshot
     page.save_page
+    page.save_screenshot('hoge')
+    page.save_page('huga')
   end
 end
