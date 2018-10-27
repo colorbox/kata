@@ -265,4 +265,12 @@ class UsersTest < ApplicationSystemTestCase
     switch_to_window(page.windows[1])
     assert_equal(current_window, page.windows[1])
   end
+
+  test 'matchers'  do
+    visit users_url
+    assert_no_text('it_is_no_matcher_long_string_hohoho')
+    assert_selector('div.hoge')
+    assert_no_css('div#thre_is_no_id')
+    assert_link('New User')
+  end
 end
