@@ -272,4 +272,32 @@ class UsersTest < ApplicationSystemTestCase
     assert_no_css('div#thre_is_no_id')
     assert_link('New User')
   end
+
+  test 'accept_alert accept_confirm accept_prompt dismiss_confirm dismiss_prompt' do
+    visit users_url
+
+    dismiss_prompt('Are you sure?') do
+      click_on('Destroy', match: :first)
+    end
+    assert_no_text 'User was successfully destroyed'
+
+    dismiss_confirm('Are you sure?') do
+      click_on('Destroy', match: :first)
+    end
+    assert_no_text 'User was successfully destroyed'
+    accept_prompt('Are you sure?') do
+      click_on('Destroy', match: :first)
+    end
+    assert_text 'User was successfully destroyed'
+
+    accept_alert('Are you sure?') do
+      click_on('Destroy', match: :first)
+    end
+    assert_text 'User was successfully destroyed'
+
+    accept_confirm('Are you sure?') do
+      click_on('Destroy', match: :first)
+    end
+    assert_text 'User was successfully destroyed'
+  end
 end
