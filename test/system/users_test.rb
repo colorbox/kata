@@ -66,13 +66,13 @@ class UsersTest < ApplicationSystemTestCase
     visit users_url
     click_on 'New User'
 
-    field = find('input[id="user_name"]').ancestor('.field')
+    field = find('input[id="user_name"]').ancestor('.field', match: :first)
     assert_not_nil(field)
   end
 
   test 'sibiling' do
     visit users_url
-    sib2 = find('.sib1').sibling('.sib2')
+    sib2 = find('.sib1').sibling('.sib2', match: :one)
     sib3 = find('.sib1').sibling('.sib3')
     assert_not_nil(sib2)
     assert_not_nil(sib3)
