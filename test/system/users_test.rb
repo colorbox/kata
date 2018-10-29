@@ -51,6 +51,7 @@ class UsersTest < ApplicationSystemTestCase
     visit users_url
 
     row = find(:row, 3)
+    assert_not_nil(row)
   end
 
   test 'visiting the index2' do
@@ -58,12 +59,15 @@ class UsersTest < ApplicationSystemTestCase
     click_on 'New User'
 
     field = find('input#user_name').ancestor('.field')
+    assert_not_nil(field)
   end
 
   test 'sibiling' do
     visit users_url
     sib2 = find('.sib1').sibling('.sib2')
     sib3 = find('.sib1').sibling('.sib3')
+    assert_not_nil(sib2)
+    assert_not_nil(sib3)
   end
 
   test 'creating a User 2' do
