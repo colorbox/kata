@@ -285,6 +285,9 @@ class UsersTest < ApplicationSystemTestCase
       click_on('Destroy', match: :first)
     end
     assert_no_text 'User was successfully destroyed'
+
+
+
     accept_prompt('Are you sure?') do
       click_on('Destroy', match: :first)
     end
