@@ -62,6 +62,14 @@ class UsersTest < ApplicationSystemTestCase
     assert_not_nil(field)
   end
 
+  test 'visiting the index2 xpath' do
+    visit users_url
+    click_on 'New User'
+
+    field = find('input[id="user_name"]').ancestor('.field')
+    assert_not_nil(field)
+  end
+
   test 'sibiling' do
     visit users_url
     sib2 = find('.sib1').sibling('.sib2')
