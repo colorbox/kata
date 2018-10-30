@@ -76,6 +76,11 @@ class UsersTest < ApplicationSystemTestCase
     sib3 = find('.sib1').sibling('.sib3')
     assert_not_nil(sib2)
     assert_not_nil(sib3)
+
+    sib2 = find('div[class="sib1"]').sibling('div[class="sib2"]', match: :one)
+    sib3 = find('div[class="sib1"]').sibling('div[class="sib3"]', match: :one)
+    assert_not_nil(sib2)
+    assert_not_nil(sib3)
   end
 
   test 'creating a User 2' do
