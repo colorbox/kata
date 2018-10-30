@@ -246,7 +246,7 @@ class UsersTest < ApplicationSystemTestCase
 
     page.save_screenshot
     page.save_page
-    page.save_screenshot('hoge')
+    page.save_screenshot('hoge.png')
     page.save_page('huga')
   end
 
