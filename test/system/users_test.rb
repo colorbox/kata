@@ -320,4 +320,14 @@ class UsersTest < ApplicationSystemTestCase
     end
     assert_text 'User was successfully destroyed'
   end
+
+  test 'result' do
+    visit users_url
+    sibs = all('.sib1')
+    assert_not_nil(sibs.failure_message)
+    assert_not_nil(sibs.negative_failure_message)
+    assert_equal(true, sibs.matches_count?)
+    assert_equal(false, sibs.empty?)
+    assert_equal(1, sibs.count)
+  end
 end
