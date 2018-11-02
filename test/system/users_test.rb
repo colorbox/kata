@@ -330,4 +330,14 @@ class UsersTest < ApplicationSystemTestCase
     assert_equal(false, sibs.empty?)
     assert_equal(1, sibs.count)
   end
+
+  test 'read native' do
+    visit users_url
+    row = find(:row, 3)
+    assert_equal('tr', row.native.tag_name)
+    assert_equal('Show Edit Destroy', row.native.text)
+    assert_equal(Selenium::WebDriver::Element, row.native.class)
+    assert_equal(Capybara::Node::Element, row.class)
+    assert_equal('/HTML/BODY/TABLE[1]/TBODY/TR[3]', row.path)
+  end
 end
