@@ -1,7 +1,6 @@
 require 'application_system_test_case'
 
 class UsersTest < ApplicationSystemTestCase
-
   setup do
     Capybara.add_selector(:row) do
       xpath { |num| ".//tbody/tr[#{num}]" }
@@ -339,5 +338,15 @@ class UsersTest < ApplicationSystemTestCase
     assert_equal(Selenium::WebDriver::Element, row.native.class)
     assert_equal(Capybara::Node::Element, row.class)
     assert_equal('/HTML/BODY/TABLE[1]/TBODY/TR[3]', row.path)
+  end
+
+  test 'add_selector with css' do
+    visit users_url
+
+    Capybara.add_selector(:table_test_css) do
+      css { |type| "#test_div_tag.#{type}" }
+    end
+
+    assert_not_nil(find(:table_test_css, 'hoge'))
   end
 end
