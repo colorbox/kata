@@ -263,7 +263,7 @@ class UsersTest < ApplicationSystemTestCase
 
     visit users_url
 
-    find =  find('div.hoge')
+    find = find('div.hoge')
     updated_selector =  find(:row)
 
     assert_equal(find, updated_selector)
@@ -347,6 +347,6 @@ class UsersTest < ApplicationSystemTestCase
       css { |type| "#test_div_tag.#{type}" }
     end
 
-    assert_not_nil(find(:table_test_css, 'hoge'))
+    assert_not_nil(find(:table_test_css, 'hogehuga'))
   end
 end
