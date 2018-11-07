@@ -268,6 +268,9 @@ class UsersTest < ApplicationSystemTestCase
 
     assert_equal(find, updated_selector)
 
+    find_xpath = find(:xpath, '//div[@class="hoge"]')
+    assert_equal(find_xpath, updated_selector)
+
     Capybara::Selector.remove('row')
     assert_equal(false, Capybara::Selector.all.include?(:row))
   end
