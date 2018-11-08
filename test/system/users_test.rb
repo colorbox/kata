@@ -352,4 +352,10 @@ class UsersTest < ApplicationSystemTestCase
 
     assert_not_nil(find(:table_test_css, 'hogehuga'))
   end
+
+  test 'xpath with div id(failed)' do
+    # assert_not_nil(find(:xpath, '//div[@id="test_div_tag"]'))
+    # assert_xpath('div[id="test_div_tag"]')
+    # assert_xpath('div[@id="test_div_tag"]')
+  end
 end
