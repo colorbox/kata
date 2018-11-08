@@ -219,7 +219,7 @@ class UsersTest < ApplicationSystemTestCase
   test 'Document page current_path' do
     visit users_url
 
-    assert_equal('CapybaraKata', page.title)
+    assert_equal('Kata', page.title)
     assert_equal(true, page == Capybara.current_session)
 
     assert_equal('/users', current_path)
