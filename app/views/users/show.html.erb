@@ -3,3 +3,9 @@
 <%= @user.decorate.created_at %>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+<%= show_for @user do |u| %>
+  <%= u.attribute :name %>
+  <%= u.attribute :created_at %>
+  <%= u.attribute :updated_at %>
+<% end %>
