@@ -1,11 +1,19 @@
 <p id="notice"><%= notice %></p>
-<%= @user.decorate.trial_name %>
-<%= @user.decorate.created_at %>
+
+<p>
+  <h2>active_decorator</h2>
+  <%= @user.trial_name %>
+  <%= @user.trial_created_at %>
+</p>
+
+<p>
+  <h2>show_for</h2>
+  <%= show_for @user do |u| %>
+    <%= u.attribute :name %>
+    <%= u.attribute :created_at %>
+    <%= u.attribute :updated_at %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
-
-<%= show_for @user do |u| %>
-  <%= u.attribute :name %>
-  <%= u.attribute :created_at %>
-  <%= u.attribute :updated_at %>
-<% end %>
