@@ -1,4 +1,6 @@
-rvm: 2.0.0
 
-before_script:
-   - bundle exec danger
+language: ruby
+rvm: 2.5.1
+
+script:
+- bundle exec danger
