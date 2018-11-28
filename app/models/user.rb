@@ -20,6 +20,10 @@ class User < ApplicationRecord
       transition all - [:closed] => :closed
     end
   end
+
+  def make_rubocop_anger
+    pp "taunt police"
+  end
 end
 
 
