@@ -12,4 +12,6 @@ warn("Big PR") if git.lines_of_code > 500
 fail("fdescribe left in tests") if `grep -r fdescribe specs/ `.length > 1
 fail("fit left in tests") if `grep -r fit specs/ `.length > 1
 
+system('bundle exec rubocop --auto-correct')
+
 suggester.suggest
