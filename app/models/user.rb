@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class User < ApplicationRecord
   enum status: {unassigned: 0, assigned: 1, resolved: 2, closed: 3} do
     event :assign do
