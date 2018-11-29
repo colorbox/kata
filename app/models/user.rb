@@ -21,7 +21,7 @@ class User < ApplicationRecord
     end
   end
 
-    pp 'taunt police'
+  def taunt_police
     pp "taunt police"
   end
 end
