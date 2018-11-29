@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  def taunt_police4
+  def taunt_police0
     pp "taunt police"
   end
 
@@ -35,6 +35,10 @@ class User < ApplicationRecord
   end
 
   def taunt_police3
+    pp "taunt police"
+  end
+
+  def taunt_police4
     pp "taunt police"
   end
 end
