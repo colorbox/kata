@@ -15,6 +15,7 @@ class User < ApplicationRecord
     event :close do
       after do
         pp "close"
+        pp"検証"
       end
 
       transition all - [:closed] => :closed
