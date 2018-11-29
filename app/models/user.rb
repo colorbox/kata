@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  def taunt_police4
+    pp "taunt police"
+  end
+
   enum status: {unassigned: 0, assigned: 1, resolved: 2, closed: 3} do
     event :assign do
       transition :unassigned => :assigned
