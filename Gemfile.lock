@@ -1,19 +1,19 @@
 GIT
-  remote: git@github.com:colorbox/danger-suggester.git
-  revision: ad7e6000b0b36d464321183a46dec9c27036d1dd
-  branch: add-pp
-  specs:
-    danger-suggester (0.1.0)
-      danger
-      git_diff
-
-GIT
   remote: https://github.com/amatsuda/roundabout.git
   revision: d2ec2b76058d002567dee26ab7581ef0391820b1
   specs:
     roundabout (0.2.0)
       capybara (>= 1.0.0)
       ruby-graphviz (>= 1.0.0)
+
+GIT
+  remote: https://github.com/colorbox/danger-suggester.git
+  revision: ad7e6000b0b36d464321183a46dec9c27036d1dd
+  branch: add-pp
+  specs:
+    danger-suggester (0.1.0)
+      danger
+      git_diff
 
 GEM
   remote: https://rubygems.org/
