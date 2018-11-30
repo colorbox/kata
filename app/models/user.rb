@@ -28,6 +28,10 @@ class User < ApplicationRecord
     def taunt_police
       pp "taunt"
     end
+
+    def taunt_police2
+      pp "taunt"
+    end
   end
 
   def taunt_police
