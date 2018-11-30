@@ -1,6 +1,7 @@
 
 language: ruby
 rvm: 2.5.1
+cache: bundler
 
 script:
 - bundle exec danger
