@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/colorbox/danger.git
-  revision: 1a093a4d12d89ab6d0aa3ff99d106d235d123f25
+  revision: 4692b32396f4c5450d014d6de276ffc4abb04f03
   branch: add-pp
   specs:
     danger (5.8.2)
