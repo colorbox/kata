@@ -15,7 +15,6 @@ class User < ApplicationRecord
     event :close do
       after do
         pp "close"
-        pp"検証"
       end
 
       transition all - [:closed] => :closed
@@ -26,6 +25,3 @@ class User < ApplicationRecord
     pp "taunt police"
   end
 end
-
-
-
