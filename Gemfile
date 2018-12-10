@@ -18,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'm'
 
-gem 'danger', git:'https://github.com/colorbox/danger.git', branch: 'add-pp'
+gem 'danger', git:'https://github.com/colorbox/danger.git', branch: 'fix-newline-annotation'
 gem 'danger-suggester'
 gem 'rubocop'
 

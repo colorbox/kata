@@ -8,8 +8,8 @@ GIT
 
 GIT
   remote: https://github.com/colorbox/danger.git
-  revision: bd77dcb6d577bc3ee20bdc150f6440fb15308f35
-  branch: add-pp
+  revision: 382292b8532518b565b42236e09d1e0e2e53344f
+  branch: fix-newline-annotation
   specs:
     danger (5.9.1)
       claide (~> 1.0)
