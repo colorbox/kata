@@ -18,8 +18,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'm'
 
-gem 'danger', git:'https://github.com/colorbox/danger.git', branch: 'add-pp'
-gem 'danger-suggester', git:'https://github.com/colorbox/danger-suggester.git', branch: 'add-pp'
+gem 'danger'
+gem 'danger-suggester'
 gem 'rubocop'
 
 # Use CoffeeScript for .coffee assets and views
