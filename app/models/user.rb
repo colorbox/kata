@@ -20,4 +20,8 @@ class User < ApplicationRecord
       transition all - [:closed] => :closed
     end
   end
+
+  def taunt_police
+    pp 'taunt police'
+  end
 end
