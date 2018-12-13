@@ -98,3 +98,12 @@
 <div class="hogehuga" id="test_div_tag">
   hi
 </div>
+
+<% content_for :test_for_content_for do %>
+  <h2>this is content_for</h2>
+<% end %>
+
+<%= content_for :test_for_content_for %>
+<%= content_for :test_for_content_for %>
+<%= content_for :test_for_content_for %>
+<%= yield :test_for_content_for %>
