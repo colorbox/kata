@@ -6,10 +6,8 @@ GIT
       capybara (>= 1.0.0)
       ruby-graphviz (>= 1.0.0)
 
-GIT
-  remote: https://github.com/colorbox/danger.git
-  revision: f2581dee2be7583b66c795cc8cb45ceb33d2e891
-  branch: test-for-space-inclusion
+PATH
+  remote: ../../danger/danger
   specs:
     danger (5.10.1)
       claide (~> 1.0)
