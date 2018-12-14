@@ -18,7 +18,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'm'
 
-gem 'danger'
+gem 'danger', git: 'https://github.com/colorbox/danger.git', branch: 'test-for-space-inclusion'
+
 gem 'danger-suggester'
 gem 'rubocop'
 
